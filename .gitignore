@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/IngestionProject/dwbiTest/dwbiTest/obj
+/.vs
+/ETLApp/.vs/ETLApp
