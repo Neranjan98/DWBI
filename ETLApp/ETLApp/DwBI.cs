@@ -27,32 +27,13 @@ namespace ETLApp
                 try
                 {
 
-                    var vehicles = context
-                        .Vehicles
-                        .Where(x => 
-                            String.IsNullOrEmpty(x.After2020))
-                        .ToList();
+                   context.Vehicles
+                   .Where(x => String.IsNullOrEmpty(x.After2020))
+                   .ExecuteUpdate(p => p.SetProperty(c => c.After2020, 
+                                    r => r.model_year > 2020 ? "Y" : "N"));
 
-                    if (vehicles.Count > 0)
-                    {
-
-                        _logger.LogInformation($"Number of Vehicles that need to be updated is {vehicles.Count}");
-
-                        vehicles
-                        .ForEach(x => {
-                            x.After2020 =
-                            x.model_year > 2020 ?
-                            "Y" : "N";
-                        });
-
-                        context.SaveChanges();
-
-                        _logger.LogInformation("Db Updated");
-                    }
-                    else
-                    {
-                        _logger.LogInformation("Database already updated.");
-                    }
+                    
+                    _logger.LogInformation("Database Updated");
 
                 }
                 catch (Exception ex)
