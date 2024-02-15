@@ -38,8 +38,8 @@ namespace ETLApp
                 {
 
                     context.Vehicles
-                        .Where(x => String.IsNullOrEmpty(x.After2020))
-                   .ExecuteUpdate(p => p.SetProperty(c => c.After2020, 
+                    .Where(x => String.IsNullOrEmpty(x.After2020))
+                    .ExecuteUpdate(p => p.SetProperty(c => c.After2020, 
                                     r => r.model_year > 2020 ? "Y" : "N"));
 
                     status = CustomEnums.LogType.Success.ToString();
