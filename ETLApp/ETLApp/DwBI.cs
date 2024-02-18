@@ -13,10 +13,10 @@ namespace ETLApp
         private readonly ILogger _logger;
         private readonly IDatabaseLog _databaseLoggingService;
 
-        public DwBI(ILoggerFactory loggerFactory)
+        public DwBI(ILoggerFactory loggerFactory, ICustomLogFactory customLogging)
         {
             _logger = loggerFactory.CreateLogger<DwBI>();
-            _databaseLoggingService = new LogFactory().CreateDatabaseLoggingService();
+            _databaseLoggingService = customLogging.CreateDatabaseLoggingService();
         }
 
         [Function("DwBI")]
