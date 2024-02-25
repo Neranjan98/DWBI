@@ -1,0 +1,13 @@
+@VirtualizationService_HostAddress = http://localhost:5062
+
+###
+GET {{VirtualizationService_HostAddress}}/DataVirtualization/
+Accept: application/json
+
+###
+
+###
+GET {{VirtualizationService_HostAddress}}/DataVirtualization/{}
+Accept: application/json
+
+###

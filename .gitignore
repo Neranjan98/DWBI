@@ -6,3 +6,6 @@
 /.vs
 /ETLApp/.vs/ETLApp
 /ETLApp/.vs
+/VirtualizationService/.vs/VirtualizationService
+/VirtualizationService/VirtualizationService/bin/Debug/net8.0
+/VirtualizationService/VirtualizationService/obj
