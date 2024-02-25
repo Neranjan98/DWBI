@@ -1,4 +1,4 @@
-Service Data Virutalization - Single Interface for all database in an enterprise
+Service Data Virutalization - Single Interface for all database connections in an enterprise
 =================================================================
 
 The purpose of this project is to provide a single interface for retrieving all connection strings in a distributed system setting.
